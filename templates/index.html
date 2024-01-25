@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Analyzer</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-100">
+
+    <!-- Header -->
+    <div class="bg-green-500 p-4 flex justify-between items-center">
+        <h1 class="text-white text-2xl font-bold">Plant Analyzer</h1>
+        <button class="bg-white text-green-500 px-4 py-2 rounded" onclick="goToMoreAbout()">More Info</button>
+    </div>
+
+    <!-- Hero -->
+  <div class="flex flex-col items-center justify-center min-h-screen text-center fade-in-screen">
+    <div class="text-6xl font-bold text-gray-800 mb-20">LAI <div class="text-green-700 text-7xl">Predictor</div></div>    
+
+    <div class="flex-row">
+    <div class="container">
+        <img src="static/image1.png" alt="People working on a plant" class="rounded-lg shadow-lg mb-11 m-auto w-64">
+    </div>
+
+
+    <div class="flex flex-row">
+
+        <div class="container">
+            <img src="static/step1.png" alt="People working on a plant" class="rounded-lg shadow-lg w-64">
+        </div>
+
+        <div class="bg-green-300 p-10 border-green-300 rounded-lg align-middle text-center w-3/4 -ml-4">
+            <div class="text-3xl font-bold text-gray-800 mb-4"></div>
+            <div class="text-xl text-gray-600 mb-8">Get accurate plant analysis in seconds</div>
+            <div class="flex flex-col items-center space-y-4">
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow animate-pulse">
+                    Upload plant photo
+                </button>
+            </div>
+        </div>
+        
+        <div class="container">
+            <img src="static/step3.png" alt="People working on a plant" class="rounded-lg shadow-lg ml-20 w-64">
+        </div>
+
+    </div>
+
+    </div>
+  </div>
+  
+  <!-- More Information -->
+  <div class="bg-gray-200 p-4 justify-between items-center">
+    <div id="moreInformationSection" class="text-6xl font-bold text-gray-800 mb-20 mt-20 ml-56 hii">More <div class="text-green-700 text-7xl">Information</div></div>
+    <div class= "m-auto flex ">
+        <img src="static/stepUno.png" alt="People working on a plant" class="rounded-lg shadow-lg w-64 ml-96">
+        <h1 class="text-3xl ml-20 mt-20"><b>Step 1</b> <br> Take an image of your plant top-down</h1>
+    </div>
+    <div class= "m-auto flex ">
+        <h1 class="text-3xl mt-20 ml-96"><b>Step 2</b> <br> Upload your image to the plant analysis</h1>
+        <img src="static/stepDos.png" alt="People working on a plant" class="rounded-lg shadow-lg w-64 ml-20">
+    </div>
+    <div class= "m-auto flex ">
+        <img src="static/stepTres.png" alt="People working on a plant" class="rounded-lg shadow-lg w-64 ml-96">
+        <h1 class="text-3xl ml-20 mt-20"><b>Step 3</b> <br> Recieve your results!</h1>
+    </div>
+    <div class="w-40 h-36"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script>
+    function goToMoreAbout(){
+        const moreInformationSection = document.getElementById('moreInformationSection');
+        moreInformationSection.scrollIntoView({
+            behavior: 'smooth'
+        });
+        console.log("Pressed the Button!");
+    }
+  </script>
+</body>
+</html>

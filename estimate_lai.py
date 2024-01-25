@@ -2,9 +2,6 @@ import cv2
 import numpy as np
 from PIL import Image
 
-
-image_to_use = "basil2.jpg"
-
 def getEstimation(image):
     pil_image = Image.open(image)
 
@@ -38,6 +35,3 @@ def getEstimation(image):
     cv2.imshow('Mask', mask)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-
-
-getEstimation(image_to_use)
