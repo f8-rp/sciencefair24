@@ -34,7 +34,7 @@
             <div class="text-3xl font-bold text-gray-800 mb-4"></div>
             <div class="text-xl text-gray-600 mb-8">Get accurate plant analysis in seconds</div>
             <div class="flex flex-col items-center space-y-4">
-                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow animate-pulse">
+                <button onclick="openUploadModal()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow animate-pulse">
                     Upload plant photo
                 </button>
             </div>
@@ -67,6 +67,16 @@
     <div class="w-40 h-36"></div>
   </div>
 
+  <div id="uploadModal" class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto hidden">
+    <div class="relative bg-white p-8 w-96 rounded shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Upload Plant Photo</h2>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="fileInput" class="border p-2 mb-4" name="file">
+            <button type="button" class="bg-green-500 text-white py-2 px-4 rounded" onclick="handleUpload()">Upload</button>
+        </form>
+    </div>
+</div>
+
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
   <script>
     function goToMoreAbout(){
@@ -74,8 +84,45 @@
         moreInformationSection.scrollIntoView({
             behavior: 'smooth'
         });
-        console.log("Pressed the Button!");
     }
+
+    function openUploadModal() {
+        const uploadModal = document.getElementById('uploadModal');
+        uploadModal.classList.remove('hidden');
+        uploadModal.classList.add('flex');
+        gsap.from(uploadModal, { duration: 0.5, opacity: 0, ease: 'power4.out' });
+        document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeUploadModal() {
+        const uploadModal = document.getElementById('uploadModal');
+        gsap.to(uploadModal, { duration: 0.5, opacity: 0, ease: 'power4.out', onComplete: () => {
+            uploadModal.classList.add('hidden');
+            uploadModal.classList.remove('flex');
+        } });
+        document.body.style.overflow = '';
+    }
+
+    function handleUpload() {
+        const fileInput = document.getElementById('fileInput');
+        const formData = new FormData();
+        formData.append('file', fileInput.files[0]);
+
+        fetch('http://127.0.0.1:5000/upload', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Response from server:', data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+        closeUploadModal();
+    }
+
   </script>
 </body>
 </html>

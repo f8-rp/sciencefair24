@@ -29,9 +29,4 @@ def getEstimation(image):
     estimated_lai = plant_area / ground_area * average_leaf_area
 
     # Print results
-    print("Estimated LAI:", estimated_lai)
-
-    # Visualize the mask
-    cv2.imshow('Mask', mask)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    return estimated_lai
