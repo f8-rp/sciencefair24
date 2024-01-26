@@ -25,7 +25,6 @@ def handle_upload():
         res = getEstimation(file)
 
         response_data = {'status': 'success', 'estimated_lai':res}
-        print('Sending response:', response_data)
         return jsonify(response_data)
     except Exception as e:
         print(f'Error: {e}')

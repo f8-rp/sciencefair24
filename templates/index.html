@@ -1,128 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plant Analyzer</title>
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
 </head>
 <body class="font-sans bg-gray-100">
+  <!-- Header -->
+  <div class="bg-green-500 p-4 flex justify-between items-center">
+    <h1 class="text-white text-2xl font-bold">Plant Analyzer</h1>
+    <button class="bg-white text-green-500 px-4 py-2 rounded" onclick="goToMoreAbout()">
+      More Info
+    </button>
+  </div>
 
-    <!-- Header -->
-    <div class="bg-green-500 p-4 flex justify-between items-center">
-        <h1 class="text-white text-2xl font-bold">Plant Analyzer</h1>
-        <button class="bg-white text-green-500 px-4 py-2 rounded" onclick="goToMoreAbout()">More Info</button>
-    </div>
-
-    <!-- Hero -->
+  <!-- Hero -->
   <div class="flex flex-col items-center justify-center min-h-screen text-center fade-in-screen">
-    <div class="text-6xl font-bold text-gray-800 mb-20">LAI <div class="text-green-700 text-7xl">Predictor</div></div>    
+    <div class="text-6xl font-bold text-gray-800 mb-20">
+      LAI
+      <div class="text-green-700 text-7xl">Predictor</div>
+    </div>
 
     <div class="flex-row">
-    <div class="container">
-        <img src="static/image1.png" alt="People working on a plant" class="rounded-lg shadow-lg mb-11 m-auto w-64">
-    </div>
+      <div class="container">
+        <img src="static/image1.png" alt="People working on a plant" class="rounded-lg shadow-lg mb-11 m-auto w-64" />
+      </div>
 
-
-    <div class="flex flex-row">
-
+      <div class="flex flex-row">
         <div class="container">
-            <img src="static/step1.png" alt="People working on a plant" class="rounded-lg shadow-lg w-64">
+          <img src="static/step1.png" alt="People working on a plant" class="rounded-lg shadow-lg w-64" />
         </div>
 
         <div class="bg-green-300 p-10 border-green-300 rounded-lg align-middle text-center w-3/4 -ml-4">
-            <div class="text-3xl font-bold text-gray-800 mb-4"></div>
-            <div class="text-xl text-gray-600 mb-8">Get accurate plant analysis in seconds</div>
-            <div class="flex flex-col items-center space-y-4">
-                <button onclick="openUploadModal()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow animate-pulse">
-                    Upload plant photo
-                </button>
-            </div>
+          <div class="text-3xl font-bold text-gray-800 mb-4"></div>
+          <div class="text-xl text-gray-600 mb-8">
+            Get accurate plant analysis in seconds
+          </div>
+          <div class="flex flex-col items-center space-y-4">
+            <button onclick="openUploadModal()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow animate-pulse">
+              Upload plant photo
+            </button>
+          </div>
         </div>
-        
+
         <div class="container">
-            <img src="static/step3.png" alt="People working on a plant" class="rounded-lg shadow-lg ml-20 w-64">
+          <img src="static/step3.png" alt="People working on a plant" class="rounded-lg shadow-lg ml-20 w-64" />
         </div>
-
-    </div>
-
+      </div>
     </div>
   </div>
-  
+
   <!-- More Information -->
   <div class="bg-gray-200 p-4 justify-between items-center">
-    <div id="moreInformationSection" class="text-6xl font-bold text-gray-800 mb-20 mt-20 ml-56 hii">More <div class="text-green-700 text-7xl">Information</div></div>
-    <div class= "m-auto flex ">
-        <img src="static/stepUno.png" alt="People working on a plant" class="rounded-lg shadow-lg w-64 ml-96">
-        <h1 class="text-3xl ml-20 mt-20"><b>Step 1</b> <br> Take an image of your plant top-down</h1>
+    <div id="moreInformationSection" class="text-6xl font-bold text-gray-800 mb-20 mt-20 ml-56 hii">
+      More
+      <div class="text-green-700 text-7xl">Information</div>
     </div>
-    <div class= "m-auto flex ">
-        <h1 class="text-3xl mt-20 ml-96"><b>Step 2</b> <br> Upload your image to the plant analysis</h1>
-        <img src="static/stepDos.png" alt="People working on a plant" class="rounded-lg shadow-lg w-64 ml-20">
+    <div class="m-auto flex">
+      <img src="static/stepUno.png" alt="People working on a plant" class="rounded-lg shadow-lg w-64 ml-96" />
+      <h1 class="text-3xl ml-20 mt-20">
+        <b>Step 1</b> <br />
+        Take an image of your plant top-down
+      </h1>
     </div>
-    <div class= "m-auto flex ">
-        <img src="static/stepTres.png" alt="People working on a plant" class="rounded-lg shadow-lg w-64 ml-96">
-        <h1 class="text-3xl ml-20 mt-20"><b>Step 3</b> <br> Recieve your results!</h1>
+    <div class="m-auto flex">
+      <h1 class="text-3xl mt-20 ml-96">
+        <b>Step 2</b> <br />
+        Upload your image to the plant analysis
+      </h1>
+      <img src="static/stepDos.png" alt="People working on a plant" class="rounded-lg shadow-lg w-64 ml-20" />
+    </div>
+    <div class="m-auto flex">
+      <img src="static/stepTres.png" alt="People working on a plant" class="rounded-lg shadow-lg w-64 ml-96" />
+      <h1 class="text-3xl ml-20 mt-20">
+        <b>Step 3</b> <br />
+        Recieve your results!
+      </h1>
     </div>
     <div class="w-40 h-36"></div>
   </div>
 
+  <!-- Upload Modal -->
   <div id="uploadModal" class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto hidden">
     <div class="relative bg-white p-8 w-96 rounded shadow-lg">
-        <h2 class="text-2xl font-bold mb-4">Upload Plant Photo</h2>
-        <form id="uploadForm" enctype="multipart/form-data">
-            <input type="file" id="fileInput" class="border p-2 mb-4" name="file">
-            <button type="button" class="bg-green-500 text-white py-2 px-4 rounded" onclick="handleUpload()">Upload</button>
-        </form>
+      <h2 class="text-2xl font-bold mb-4">Upload Plant Photo</h2>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="fileInput" class="border p-2 mb-4" name="file" />
+        <button type="button" class="bg-green-500 text-white py-2 px-4 rounded" onclick="handleUpload()">Upload</button>
+      </form>
     </div>
-</div>
+  </div>
+
+  <!-- Modal that displays on upload (results) -->
+  <div id="resultModal" class="fixed inset-0 z-50 flex items-center justify-center hidden overflow-x-hidden overflow-y-auto bg-gray-800 bg-opacity-75">
+    <div class="relative bg-white p-8 max-w-screen-md w-full rounded shadow-lg text-center">
+      <h2 class="text-3xl font-bold mb-6 text-gray-800">Estimation Result</h2>
+      <div id="loadingSpinner" class="animate-spin mb-4">
+        <i class="fa-solid fa-spinner text-green-500 text-5xl"></i>
+      </div>
+      <p id="resultText" class="text-5xl font-extrabold text-green-500 mb-8"></p>
+      <canvas id="resultChart" class="mb-8 m-auto" style="max-width:350px; max-height:350px;"></canvas>
+      <button type="button" class="bg-green-500 text-white py-2 px-4 rounded" onclick="closeResultModal()">Close</button>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script src="https://kit.fontawesome.com/107c7a2b64.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <script>
-    function goToMoreAbout(){
-        const moreInformationSection = document.getElementById('moreInformationSection');
-        moreInformationSection.scrollIntoView({
-            behavior: 'smooth'
-        });
+    function goToMoreAbout() {
+      const moreInformationSection = document.getElementById("moreInformationSection");
+      moreInformationSection.scrollIntoView({ behavior: "smooth" });
     }
 
     function openUploadModal() {
-        const uploadModal = document.getElementById('uploadModal');
-        uploadModal.classList.remove('hidden');
-        uploadModal.classList.add('flex');
-        gsap.from(uploadModal, { duration: 0.5, opacity: 0, ease: 'power4.out' });
-        document.body.style.overflow = 'hidden'; 
+      const uploadModal = document.getElementById("uploadModal");
+      uploadModal.style.opacity = "1"; // Reset opacity
+      uploadModal.style.pointerEvents = "auto"; // Reset pointer events
+      uploadModal.classList.remove("hidden");
+      gsap.from(uploadModal, { duration: 0.5, opacity: 0, ease: "power4.out" });
+
+      // Center the modal using top and left properties
+      const modalHeight = uploadModal.clientHeight;
+      const modalWidth = uploadModal.clientWidth;
+
+      const topPosition = Math.max(0, (window.innerHeight - modalHeight) / 2) + "px";
+      const leftPosition = Math.max(0, (window.innerWidth - modalWidth) / 2) + "px";
+
+      uploadModal.style.top = topPosition;
+      uploadModal.style.left = leftPosition;
+
+      document.body.style.overflow = "hidden";
     }
 
     function closeUploadModal() {
-        const uploadModal = document.getElementById('uploadModal');
-        gsap.to(uploadModal, { duration: 0.5, opacity: 0, ease: 'power4.out', onComplete: () => {
-            uploadModal.classList.add('hidden');
-            uploadModal.classList.remove('flex');
-        } });
-        document.body.style.overflow = '';
+      const uploadModal = document.getElementById("uploadModal");
+      gsap.to(uploadModal, {
+        duration: 0.5,
+        opacity: 0,
+        ease: "power4.out",
+        onComplete: () => {
+          uploadModal.classList.add("hidden");
+          uploadModal.classList.remove("flex");
+          document.body.style.overflow = "";
+        },
+      });
     }
 
     function handleUpload() {
-        const fileInput = document.getElementById('fileInput');
-        const formData = new FormData();
-        formData.append('file', fileInput.files[0]);
+      const fileInput = document.getElementById("fileInput");
+      const formData = new FormData();
+      formData.append("file", fileInput.files[0]);
 
-        fetch('http://127.0.0.1:5000/upload', {
-            method: 'POST',
-            body: formData,
+      console.log("Attempting to send upload request...");
+
+      fetch("http://127.0.0.1:5000/upload", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Response from server:", data);
+
+          if (data.status === "success") {
+            openResultModal(data.estimated_lai);
+          }
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Response from server:', data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
+        .catch((error) => {
+          console.error("Error:", error);
         });
 
-        closeUploadModal();
+      console.log("Closing upload modal...");
+      closeUploadModal();
     }
 
+    function openResultModal(estimatedLAI) {
+      const resultModal = document.getElementById("resultModal");
+      const resultText = document.getElementById("resultText");
+      const loadingSpinner = document.getElementById("loadingSpinner");
+
+      resultModal.classList.remove("hidden");
+      resultModal.classList.add("flex");
+      gsap.from(resultModal, { duration: 0.5, opacity: 0, ease: "power4.out" });
+      document.body.style.overflow = "hidden";
+
+      // Simulate loading for 3 seconds
+      setTimeout(() => {
+        // Hide loading spinner
+        loadingSpinner.classList.add("hidden");
+
+        // Display estimation result
+        resultText.textContent = `Estimated Leaf Area: ${estimatedLAI}`;
+
+        // Display doughnut chart
+        displayDoughnutChart(estimatedLAI);
+      }, 3000);
+    }
+
+    function displayDoughnutChart(estimatedLAI) {
+      const resultChartCanvas = document.getElementById("resultChart");
+      const ctx = resultChartCanvas.getContext("2d");
+
+      // Dummy data (you can replace this with actual data)
+      const data = {
+        labels: ["Estimated LAI"],
+        datasets: [
+          {
+            label: "LAI Value",
+            data: [estimatedLAI],
+            backgroundColor: ["rgba(75, 192, 192, 0.2)"]
+          },
+        ],
+      };
+
+      // Chart configuration
+      const options = {
+        scales: {}
+      };
+
+      // Create and display the chart
+      new Chart(ctx, {
+        type: "doughnut", // Correct chart type
+        data: data,
+        options: options,
+      });
+    }
+
+    function closeResultModal() {
+      const resultModal = document.getElementById("resultModal");
+      gsap.to(resultModal, {
+        duration: 0.5,
+        opacity: 0,
+        ease: "power4.out",
+        onComplete: () => {
+          resultModal.classList.add("hidden");
+          resultModal.classList.remove("flex");
+          document.body.style.overflow = "auto";
+          refreshPage();
+        },
+      });
+    }
+
+    function refreshPage() {
+      window.location.href = window.location.href;
+    }
   </script>
 </body>
 </html>
